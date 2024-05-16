@@ -6,7 +6,7 @@ const connect = () => {
             // 빨간색으로 표시된 부분은 대여한 ID, Password, 주소에 맞게끔 수정해주세요!
             "mongodb+srv://wlgh1157:Fpdltndk33@express-mongo.pxvvq8x.mongodb.net/?retryWrites=true&w=majority&appName=express-mongo",
             {
-                dbName: "todo_memo", // todo_memo 데이터베이스명을 사용합니다.
+                dbName: "node_lv1", // todo_memo 데이터베이스명을 사용합니다.
             },
         )
         .then(() => console.log("MongoDB 연결에 성공하였습니다."))
