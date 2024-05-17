@@ -13,5 +13,5 @@ const ItemSchema = new mongoose.Schema({
     item_stat: { type: ItemStatSchema },
 });
 
-// TodoSchema를 바탕으로 Todo모델을 생성하여, 외부로 내보냅니다.
+// ItemSchema 바탕으로 items모델을 생성하여, 외부로 내보냅니다.
 export default mongoose.model("Items", ItemSchema);

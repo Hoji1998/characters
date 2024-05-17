@@ -1,12 +1,15 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+
+// .env 파일 로드
+dotenv.config();
 
 const connect = () => {
     mongoose
         .connect(
-            // 빨간색으로 표시된 부분은 대여한 ID, Password, 주소에 맞게끔 수정해주세요!
-            "mongodb+srv://wlgh1157:Fpdltndk33@express-mongo.pxvvq8x.mongodb.net/?retryWrites=true&w=majority&appName=express-mongo",
+            process.env.MONGO_URI,
             {
-                dbName: "node_lv1", // todo_memo 데이터베이스명을 사용합니다.
+                dbName: "node_lv1",
             },
         )
         .then(() => console.log("MongoDB 연결에 성공하였습니다."))
