@@ -1,6 +1,7 @@
 import express from "express";
 import connet from "./schemas/index.js";
 import charactersRouter from "./routes/characters.router.js";
+import itemRouter from "./routes/items.router.js";
 import errorHandlerMiddleware from "./middlewares/error-handler.middleware.js";
 
 const app = express();
@@ -26,7 +27,7 @@ router.get("/", (req, res) => {
     return res.json({ message: "Hi!" });
 });
 
-app.use("/api", [router, charactersRouter]); // 미들웨어 5
+app.use("/api", [router, charactersRouter, itemRouter]); // 미들웨어 5
 
 // 에러 처리 미들웨어를 등록한다. => 라우터 다음
 app.use(errorHandlerMiddleware);

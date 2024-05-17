@@ -1,7 +1,10 @@
 export default (error, req, res, next) => {
-    console.error(error);
     if (error.name === "ValidationError") {
-        return res.status(400).json({ errorMessage: error.message });
+        return res.status(400).json({ errorMessage: '데이터 형식이 올바르지 않습니다.' });
+    }
+
+    if (error.status) { //404
+        return res.status(error.status).json({ message: '캐릭터 조회에 실패하였습니다.' });
     }
 
     return res
